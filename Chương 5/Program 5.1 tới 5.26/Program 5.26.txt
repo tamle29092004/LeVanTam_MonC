@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int dvdCount = 1;   // Đếm số lượng DVD
+    int numDVDs;        // Số lượng DVD thuê
+    double total = 0.0; // Biến tích lũy tổng phí
+    char current;       // Phiên bản hiện tại, Y hoặc N
+
+    // Nhập số lượng DVD.
+    cout << "How many DVDs are being rented? ";
+    cin >> numDVDs;
+
+    // Xác định phí.
+    do
+    {
+        if ((dvdCount % 3) == 0)
+        {
+            // In ra thông báo miễn phí nếu là DVD thứ ba.
+            cout << "DVD #" << dvdCount << " is free!\n";
+            dvdCount++;
+            continue; // Bắt đầu ngay lần lặp tiếp theo
+        }
+
+        // Hỏi người dùng phiên bản hiện tại của DVD.
+        cout << "Is DVD #" << dvdCount;
+        cout << " a current release? (Y/N) ";
+        cin >> current;
+
+        // Tính phí dựa trên phiên bản.
+        if (current == 'Y' || current == 'y')
+            total += 3.50; // Phí cho phiên bản hiện tại
+        else
+            total += 2.50; // Phí cho phiên bản cũ
+
+        dvdCount++; // Tăng số lượng DVD
+    } while (dvdCount <= numDVDs);
+
+    // In ra tổng phí.
+    cout << "The total is $" << total << endl;
+    return 0;
+}

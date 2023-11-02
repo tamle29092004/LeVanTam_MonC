@@ -1,0 +1,44 @@
+// Chương trình này tính toán số đội bóng đá mà một giải trẻ có thể tạo ra từ số lượng
+// người chơi có sẵn. Xác thực đầu vào được thể hiện với các vòng lặp while.
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    const int MIN_PLAYER = 9, MAX_PLAYER = 15; // tối thiểu và tối đa người chơi
+    // các biến
+    int players,     // số người chơi
+        teamPlayers, // số người trong đội
+        numberTeam,  // số đội
+        leftOver;    // số người chơi còn lại
+    // nhap cau thu doi
+    cout << "How many players do wish per team?  : ";
+    cin >> teamPlayers;
+
+    // kiểm tra đầu vào
+    while (teamPlayers < 9 || teamPlayers > 15)
+    {
+        // thông báo lổi
+        cout << " You should have at least " << MIN_PLAYER
+             << "but no more than " << MAX_PLAYER << "per team.\n";
+        // nhâp lại đầu vào
+        cout << "How many players do you wish per team? : ";
+        cin >> teamPlayers;
+    }
+    // nhập số người chơi
+    cout << "How many players are available? : ";
+    cin >> players;
+    while (players <= 0)
+    {
+        // nhập lại số người nếu nhỏ hơn 0
+        cout << "Please enter 0 or greater: ";
+        cin >> players;
+        }
+    // tính toán số đội
+    numberTeam = players / teamPlayers;
+    // tính toán số người thừa
+    leftOver = players % teamPlayers;
+
+    cout << "There will be " << numberTeam << " team with " << leftOver << " Player with leftover" << endl;
+   return 0;	
+}

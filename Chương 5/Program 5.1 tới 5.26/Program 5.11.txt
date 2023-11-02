@@ -1,0 +1,31 @@
+// This program converts the speeds 60 kph through 130 kph (in 10 kph increments) to mph.
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    const int START_KPH = 60,//giá trị bắt đầu
+              END_KPH = 130,//giá tri kết thúc
+              INCREMENT = 10;//TĂNG 10 
+
+    //CHUYỂN ĐỔI
+    const double CONVERSION_FACTOR = 0.6214;
+    //variable 
+    int kph;
+    double mph;
+    //set the numeric output fomatting.
+    cout <<fixed << showpoint << setprecision(1);
+    //in ra màn hình 
+    cout <<"KPH\tMPH\n";
+    cout <<"--------------\n";
+    //dùng vòng lặp
+    for(kph = START_KPH; kph < END_KPH ; kph += INCREMENT)
+    {
+        mph = kph * CONVERSION_FACTOR;
+        //in ra
+        cout <<kph <<"\t" <<mph <<endl;
+
+    }
+    return 0;
+}

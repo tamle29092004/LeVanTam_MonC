@@ -1,0 +1,26 @@
+//chương trình kiểm tra nhiệt độ của 1 chất
+#include <iostream>
+
+using namespace std;
+int main ()
+{
+    const double MAX_TEMP = 102.5;//giá trị này không đổi trong quá trình thực hiện
+    double temperature;
+    //nhập nhiệt độ
+    cout <<"Enter the subtance's Celsius temperature : ";
+    cin >> temperature;
+
+    //thực hiện kiểm tra
+    while ( temperature > MAX_TEMP)
+    {
+        cout << "The temperature is too high. Turn the\n";
+        cout << "thermostat down and wait 5 minutes.\n";
+        cout << "Then take the Celsius temperature again\n";
+        cout << "and enter it here: ";
+        cin >> temperature;
+    }
+    cout <<"The temperature is acceptable.\n";
+    cout <<"Check it again in 15 minutes.\n";
+
+    return 0;
+}

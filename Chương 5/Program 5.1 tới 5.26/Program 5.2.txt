@@ -1,0 +1,20 @@
+//Chương trình này trình bày các mã tiền tố và hậu tố của các toán tử tăng và giảm.
+#include <iostream>
+
+using namespace std;
+int main ()
+{
+    int num = 4;//khoi tao = 4
+    cout << num <<endl;
+    cout <<num ++ <<endl;//in ra 4 sau đó mới tăng thêm 1
+    cout <<num <<endl;
+    cout <<++num <<endl;//tăng thêm 1 đơn vị và sau đó in ra màn hình
+    cout <<endl;
+
+    cout <<num <<endl;
+    cout << num--<<endl;//in ra mới giảm 1 đơn vị
+    cout <<num  <<endl;
+    cout << --num <<endl;//giảm 1 đơn vị rồi mới in 
+
+    return 0;
+}

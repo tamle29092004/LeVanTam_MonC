@@ -1,0 +1,27 @@
+// chương trình tính điểm trung bình và lặp lại theo ý muốn của người sử dụng
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    int score1, score2, score3;
+    double average = 0 ; // điểm trung bình
+    char again;     // lựa chọn để lặp lại
+    do
+    {
+        // nhập điểm
+        cout << " Enter 3 Score and I will average them : ";
+        cin >> score1 >> score2 >> score3;
+
+        // tính toán giá trị trung bình
+        average = (score1 + score2 + score3) / 3.0;
+
+        cout << "The average is " << average << endl;
+        // lặp lại theo yêu cầu
+        cout << "Do you want to average to another set (Y/N)";
+        cin >> again;
+    }while (again == 'Y' || again == 'N');
+     
+    return 0;	
+
+}

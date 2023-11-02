@@ -1,0 +1,18 @@
+//chương trình sử dùng for  để đưa số từ 1 đến 10 và bình phương của nó ra màn hình
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    const int MIN_NUMBER = 1,//GIÁ TRỊ BẮT ĐẦU
+              MAX_NUMBER = 10;//GIÁ TRỊ KẾT THÚC
+
+    int num;
+    cout <<"Number   Number Squared\n";
+    cout <<"----------------------------\n";
+    for ( num = MIN_NUMBER ; num <= MAX_NUMBER ; num ++)
+    {
+        cout <<num <<"\t\t" << (num*num) <<endl;
+    }
+    return 0;
+}

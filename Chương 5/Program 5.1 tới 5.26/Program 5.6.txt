@@ -1,0 +1,19 @@
+//chương trình in ra một dãy số và dãy số bình phương của nó
+#include <iostream>
+
+using namespace std;
+int main ()
+{
+    const int MIN_NUMBER = 1, //SỐ BẮT ĐẦU
+              MAX_NUMBER = 10 ;//SỐ KẾT THÚC
+    int num = MIN_NUMBER;//gán
+    //in ra dãy số
+    cout <<" Number  Number square \n";
+    cout <<"--------------------------\n";
+    while (num <= MAX_NUMBER)
+    {
+        cout << num <<"\t\t" <<(num *num ) <<endl;
+        num++;//sau khi thực hiện tăng 1 đơn vị
+    }
+    return 0;
+}

@@ -1,0 +1,28 @@
+// chuowng trình kiểm tra khi mở file bị lổi
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+int main()
+{
+    ifstream inputFile;
+    int number;
+    inputFile.open("BadListOfNumber.txt");
+
+    if (inputFile)
+    {
+        /// đọc dử liệu trong file
+        while (inputFile >> number)
+        {
+            cout << number << endl;
+        }
+        // sau đó đóng file
+        inputFile.close();
+    }
+    else
+    {
+        //nếu không có dử liệu sẻ thông báo lổi 
+        cout << "Error open the file.\n ";
+    }
+    return 0;
+}

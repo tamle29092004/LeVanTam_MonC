@@ -1,0 +1,26 @@
+// Chương trình  lấy số liệu bán hàng hàng ngày trong một khoảng thời gian và tính tổng của chúng.
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    int days;           // số ngày
+    double total = 0.0; // tích lũy
+    // nhập số ngày
+    cout << "For how many days do you have sales figures ";
+    cin >> days;
+    // Lấy doanh số mỗi ngày và tích lũy tổng cộng.
+    for (int count = 1; count <= days; count++)
+    {
+        double sales;
+        cout << "Enter the sale for day " << count << ": ";
+        cin >> sales;
+        total += sales; // tích lủy của tổng
+    }
+
+    cout << fixed << showpoint << setprecision(2);
+    cout << "The total sales are $" << total << endl;
+
+    return 0;
+}

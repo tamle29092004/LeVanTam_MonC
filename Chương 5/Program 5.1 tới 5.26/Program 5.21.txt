@@ -1,0 +1,30 @@
+// chương trình đọc dử liệu của một file
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ofstream outputFile;
+    int numberOfDays;
+    double sales;
+    // nhập số ngày
+    cout << "For how many days do you have sales : ";
+    cin >> numberOfDays;
+
+    // mở 1 file dạng txt
+    outputFile.open("Sales.txt");
+    // dùng vòng lắp in ra
+    for (int count = 1; count <= numberOfDays; count++)
+    {
+        cout << " Enter the sale for day " << count << " ";
+        cin >> sales;
+        outputFile << sales << endl; // viết giá trị vào flie
+    }
+
+    // đóng file khi xem xong
+    outputFile.close();
+    cout << "Data Written to Sale.txt\n ";
+    return 0;
+}

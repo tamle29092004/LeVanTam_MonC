@@ -1,0 +1,30 @@
+//day la chuong trinh tang va bot 1 don vi
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num = 4;//gia tri ban dau la 4
+    //in ra man hinh
+    cout <<"The variable num is " <<num <<endl;
+    cout <<"I will now increment num.\n\n ";
+
+    //sau do tang 1 don 1 don 
+    num++;
+    cout <<"The variable num is " <<num <<endl;
+    cout <<"I will now increment num.\n\n ";
+
+    ++num;//tang truoc moi in
+    cout <<"The variable num is " <<num <<endl;
+    cout <<"I will now increment num.\n\n ";
+
+    num--;//in ra roi moi giam 1 don vi
+    cout <<"The variable num is " <<num <<endl;
+    cout <<"I will now increment num.\n\n ";
+
+    --num;//giam bot 1 don vi truoc in
+    cout <<"The variable num is " <<num <<endl;
+    cout <<"I will now increment num.\n\n ";
+
+    return 0;
+}

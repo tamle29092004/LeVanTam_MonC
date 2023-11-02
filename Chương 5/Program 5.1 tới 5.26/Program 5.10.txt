@@ -1,0 +1,27 @@
+// chương trình chứng minh sự hoạt đọng của vòng lặp for
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int minNumber, // giá trị bắt đầu
+        maxNumber; // giá trị kết thúc
+
+    // đưa ra màn hình và nhập giá trị bắt đầu và kết thúc
+    cout << "I will display a table of number and "
+         << "their squares.\n"
+         << "Enter the starting number : ";
+    cin >> minNumber;
+    cout << "Enter the endig number : ";
+    cin >> maxNumber;
+
+    // in ra số và bình phương só đó
+    cout << "Number   Number Squared\n"
+         << "--------------------------\n";
+
+    for (int num = minNumber; num <= maxNumber; num++)
+    {
+        cout << num << "\t\t" << (num * num) << endl;
+    }
+    return 0;
+}

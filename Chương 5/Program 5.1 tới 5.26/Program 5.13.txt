@@ -1,0 +1,22 @@
+// Chương trình này tính tổng số điểm a Đội bóng thứ 2 đã kiếm được tiền sau một loạt trận đấu. Người dùng
+// nhập một chuỗi các giá trị điểm, sau đó nhập −1 khi hoàn tất.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int game = 1, points, total = 0;
+
+    cout << "Enter the number of point your has earned\n";
+    cout << "so far in the season, then enter −1 when finished.\n\n";
+    cout << "Enter the points for game " << game << ": ";
+    cin >> points;
+    while (points != -1)
+    {
+        total += points ;
+        game ++;
+        cout <<"Enter the point for game " <<game <<": ";
+        cin >> points ;
+    }
+    cout <<"\nThe total points are "<<total <<endl;
+    return 0;
+}

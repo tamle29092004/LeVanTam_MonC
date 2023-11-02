@@ -1,0 +1,20 @@
+//chương trình đọc dử liệu từ file
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main ()
+{
+    ifstream inputFile ;
+    int number ;
+    inputFile.open ("ListOfNumber.txt");
+    //đọc từ file và in ra
+   while (inputFile >> number)
+    {
+        cout << number <<endl;
+        
+    }
+    inputFile.close();
+    return 0;
+
+}

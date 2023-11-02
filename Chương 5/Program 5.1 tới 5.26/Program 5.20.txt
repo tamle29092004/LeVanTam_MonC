@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream> // Để sử dụng ifstream cho đọc từ file
+using namespace std;
+
+int main() {
+    ifstream inFile; // Khai báo đối tượng ifstream để đọc từ file
+    int value1, value2, value3, sum;
+
+    // Mở file để đọc
+    inFile.open("Friends.txt");
+
+    // Đọc ba số từ file
+    inFile >> value1;
+    inFile >> value2;
+    inFile >> value3;
+
+    // Đóng file
+    inFile.close();
+
+    // Tính tổng của ba số
+    sum = value1 + value2 + value3;
+
+    // Hiển thị ba số
+    cout << "Here are the numbers:\n"
+         << value1 << " " << value2
+         << " " << value3 << endl;
+
+    // Hiển thị tổng của ba số
+    cout << "Their sum is: " << sum << endl;
+
+    return 0;
+}

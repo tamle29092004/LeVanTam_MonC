@@ -1,0 +1,30 @@
+// chương trinh nhap ten file.txt mình muốn tạo theo ý và có thể thay đổi khi chạy chương trình
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+int main()
+{
+    ifstream inputFile;
+    string Filename;
+    // nhập tên file
+    cout << "Enter the filename : ";
+    cin >> Filename;
+    inputFile.open(Filename);
+
+    int number;
+    // kiểm tra
+    if (inputFile)
+    {
+        while (inputFile >> number)
+        {
+            cout << number << endl;
+        }
+        inputFile.close();
+    }
+    else
+    {
+        //kiểm tra nếu lổi thông báo ra màn hình
+        cout << "Error the opening File.\n";
+    }
+}
