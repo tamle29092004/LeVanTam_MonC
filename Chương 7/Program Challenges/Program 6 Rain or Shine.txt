@@ -1,0 +1,83 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+
+using namespace std;
+
+const int THANG = 3;
+const int NGAY_TRONG_THANG = 30;
+
+int main()
+{
+    char duLieuThoiTiet[THANG][NGAY_TRONG_THANG];
+    ifstream inputFile("RainOrShine.txt");
+
+    if (!inputFile)
+    {
+        cerr << "Khong the mo tep." << endl;
+        return 1;
+    }
+
+    // Doc du lieu thoi tiet tu tep
+    for (int thang = 0; thang < THANG; thang++)
+    {
+        for (int ngay = 0; ngay < NGAY_TRONG_THANG; ngay++)
+        {
+            inputFile >> duLieuThoiTiet[thang][ngay];
+        }
+    }
+
+    inputFile.close();
+
+    // Khoi tao bo dem cho tung loai thoi tiet
+    int soNgayMua[THANG] = {0};
+    int soNgayMay[THANG] = {0};
+    int soNgayNang[THANG] = {0};
+
+    // Tinh toan so ngay mua, nhieu may va nang cho tung thang
+    for (int thang = 0; thang < THANG; thang++)
+    {
+        for (int ngay = 0; ngay < NGAY_TRONG_THANG; ngay++)
+        {
+            char thoiTiet = duLieuThoiTiet[thang][ngay];
+            if (thoiTiet == 'R')
+            {
+                soNgayMua[thang]++;
+            }
+            else if (thoiTiet == 'C')
+            {
+                soNgayMay[thang]++;
+            }
+            else if (thoiTiet == 'S')
+            {
+                soNgayNang[thang]++;
+            }
+        }
+    }
+
+    const string tenThang[] = {"Thang 6", "Thang 7", "Thang 8"};
+
+    // Hien thi bao cao thoi tiet
+    for (int thang = 0; thang < THANG; thang++)
+    {
+        cout << "Trong " << tenThang[thang] << ":" << endl;
+        cout << "So ngay mua: " << soNgayMua[thang] << " ngay" << endl;
+        cout << "So ngay nhieu may: " << soNgayMay[thang] << " ngay" << endl;
+        cout << "So ngay nang: " << soNgayNang[thang] << " ngay" << endl;
+        cout << endl;
+    }
+
+    // Tim thang co so ngay mua nhieu nhat
+    int thangCoNhieuMuaNhat = 0;
+    for (int thang = 1; thang < THANG; thang++)
+    {
+        if (soNgayMua[thang] > soNgayMua[thangCoNhieuMuaNhat])
+        {
+            thangCoNhieuMuaNhat = thang;
+        }
+    }
+
+    cout << "Thang co so ngay mua nhieu nhat la " << tenThang[thangCoNhieuMuaNhat] << "." << endl;
+
+    return 0;
+}

@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    const int SO_LOAI_SALSA = 5;
+    string tenSalsa[SO_LOAI_SALSA] = {"nhe", "vua", "ngot", "nong", "nong nan"};
+    int soLoSalsa[SO_LOAI_SALSA];
+
+    // Nhap du lieu doanh so ban hang cho tung loai salsa
+    for (int i = 0; i < SO_LOAI_SALSA; i++) {
+        cout << "Nhap so lo da ban cho loai salsa " << tenSalsa[i] << ": ";
+        cin >> soLoSalsa[i];
+
+        // Xac thuc dau vao: Dam bao gia tri khong am
+        while (soLoSalsa[i] < 0) {
+            cout << "Vui long nhap mot gia tri khong am: ";
+            cin >> soLoSalsa[i];
+        }
+    }
+
+    // Tinh va hien thi doanh so ban cho tung loai salsa
+    int tongDoanhSo = 0;
+    int loaiSalsaBanChayNhat = 0;
+
+    cout << "\nBao cao doanh so ban hang:\n";
+    for (int i = 0; i < SO_LOAI_SALSA; i++) {
+        cout << "So lo da ban cho loai salsa " << tenSalsa[i] << ": " << soLoSalsa[i] << " lo\n";
+        tongDoanhSo += soLoSalsa[i];
+
+        // Tim loai salsa ban chay nhat
+        if (soLoSalsa[i] > soLoSalsa[loaiSalsaBanChayNhat]) {
+            loaiSalsaBanChayNhat = i;
+        }
+    }
+
+    cout << "Tong doanh so ban hang: " << tongDoanhSo << " lo\n";
+    cout << "Loai salsa ban chay nhat la " << tenSalsa[loaiSalsaBanChayNhat] << " voi " << soLoSalsa[loaiSalsaBanChayNhat] << " lo da ban.\n";
+
+    return 0;
+}

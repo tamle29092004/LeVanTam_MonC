@@ -1,0 +1,17 @@
+// chương trình dùng mảng kểu char ( kí tự)
+#include <iostream>
+using namespace std;
+int main()
+{
+    const int NUM_LETTERS = 10;
+    char letter[NUM_LETTERS] = {'A','B','C','D','E','F','G','H','I','J'};
+    cout <<"Character "<<"\t" << "ASCII code\n";
+    cout <<"----------"<<"\t" <<"--------------\n";
+    for(int count = 0 ; count < NUM_LETTERS ; count++)
+    {
+        cout << letter[count]<<"\t\t";
+        cout<<static_cast<int>(letter[count]) <<endl;
+
+    }
+    return 0;
+}

@@ -1,0 +1,32 @@
+//chương trình tim min max
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    const int SIZE = 10;
+    int Array[SIZE];
+
+    // Nhập giá trị cho mảng
+    for (int count = 0; count < SIZE; count++) {
+        cout << "Moi nhap phan tu thu " << count + 1 << " : ";
+        cin >> Array[count];
+    }
+
+    int MaxVal = Array[0];
+    int MinVal = Array[0];
+
+    for (int count = 1; count < SIZE; count++) {
+        if (Array[count] > MaxVal) {
+            MaxVal = Array[count];
+        }
+        if (Array[count] < MinVal) {
+            MinVal = Array[count];
+        }
+    }
+
+    cout << "Gia tri lon nhat la: " << MaxVal << endl;
+    cout << "Gia tri nho nhat la: " << MinVal << endl;
+
+    return 0;
+}

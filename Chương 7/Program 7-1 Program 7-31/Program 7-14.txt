@@ -1,0 +1,25 @@
+// This program reads data from a file into an array.
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+using namespace std;
+int main()
+{
+    const int ARRAY_SIZE = 100;
+    int number[ARRAY_SIZE]; // khai báo mảng với 100 phần tử
+    int count = 0;
+    ifstream inputFile;
+    inputFile.open("number.txt");
+    // đọc các số trong file để đưa vào mảng
+    while (count < ARRAY_SIZE && inputFile >> number[count])
+    {
+        count++;
+    }
+    inputFile.close();
+    // Display the numbers read.
+    cout << "The numbers are: ";
+    for (int index = 0; index < count; index++)
+        cout << number[index] << " ";
+    cout << endl;
+    return 0;
+}

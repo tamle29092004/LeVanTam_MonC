@@ -1,0 +1,24 @@
+// This program stores, in two arrays, the hours worked by 5
+// employees, and their hourly pay rates.
+#include <iostream>
+#include <iomanip>
+#include <vector> // Needed to define vectors
+using namespace std;
+void showValues(vector<int>);
+int main()
+{
+    vector<int> values;
+    // Put a series of numbers in the vector.
+    for (int count = 0; count < 7; count++)
+        values.push_back(count * 2);
+    // Display the numbers.
+    showValues(values);
+    return 0;
+
+   
+}
+void showValues(vector<int> vect)
+{
+    for (int count = 0; count < vect.size(); count++)
+        cout << vect[count] << endl;
+}

@@ -1,0 +1,35 @@
+// This program stores, in an array, the hours worked by
+// employees who all make the same hourly wage.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    const int NUM_EMPLOYEES = 5; // sô giờ
+    int hours[NUM_EMPLOYEES];    // mảng số giờ
+    double payrate;              // số tiền 1 giờ
+    double grossPay;             // chi phí phải trả
+    // nhập vào số giờ làm việc
+    cout << "Enter the hours worked by ";
+    cout << NUM_EMPLOYEES << " employees who all\n";
+    cout << "earn the same hourly rate.\n";
+    for (int index = 0; index < NUM_EMPLOYEES; index++)
+    {
+        cout << "Employee #" << (index + 1) << ": ";
+        cin >> hours[index];
+    }
+    // nhập số tiền 1h
+    cout << "Enter the hourly pay rate for all the employees: ";
+    cin >> payrate;
+    //làm tròn và hiển thị số lẻ
+    cout << "Here is the gross pay for each employee:\n";
+    cout << fixed << showpoint << setprecision(2);
+    for (int index = 0; index < NUM_EMPLOYEES; index++)
+    {
+        //in ra kết quả
+        grossPay = hours[index] * payrate;
+        cout << "Employee #" << (index + 1);
+        cout << ": $" << grossPay << endl;
+    }
+    return 0;
+}

@@ -1,0 +1,51 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    string fileName;
+    cout << "Nhap ten file: ";
+    cin >> fileName;
+
+    ifstream inputFile(fileName);
+
+    if (!inputFile) {
+        cerr << "Khong the mo tep." << endl;
+        return 1;
+    }
+
+    vector<double> numbers;
+    double number;
+
+    // Đọc các số từ tệp vào mảng
+    while (inputFile >> number) {
+        numbers.push_back(number);
+    }
+
+    inputFile.close();
+
+    if (numbers.empty()) {
+        cerr << "Tep rong hoac khong co so." << endl;
+        return 1;
+    }
+
+    // Tìm số lớn nhất và nhỏ nhất trong mảng
+    double minValue = *min_element(numbers.begin(), numbers.end());
+    double maxValue = *max_element(numbers.begin(), numbers.end());
+
+    // Tính tổng và trung bình cộng
+    double total = accumulate(numbers.begin(), numbers.end(), 0.0);
+    double average = total / numbers.size();
+
+    cout << "So thap nhat trong mang: " << fixed << setprecision(2) << minValue << endl;
+    cout << "So cao nhat trong mang: " << fixed << setprecision(2) << maxValue << endl;
+    cout << "Tong cac so trong mang: " << fixed << setprecision(2) << total << endl;
+    cout << "Trung binh cong cua cac so trong mang: " << fixed << setprecision(2) << average << endl;
+
+    return 0;
+}

@@ -1,0 +1,49 @@
+//chương trình tính tổng lương mưa cao nhat va thap nhat
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    const int NUM_MONTHS = 12;
+    double rainfall[NUM_MONTHS];
+    double totalRainfall = 0.0;
+    double highestRainfall = 0.0;
+    double lowestRainfall = 9999.0; // Khoi tao gia tri lon nhat
+    int highestMonth = -1;
+    int lowestMonth = -1;
+
+    // Nhap luong mua cho tung thang va tinh tong
+    for (int month = 0; month < NUM_MONTHS; month++) {
+        cout << "Nhap luong mua cho thang " << (month + 1) << ": ";
+        cin >> rainfall[month];
+
+        while (rainfall[month] < 0) {
+            cout << "Luong mua khong the la so am. Vui long nhap lai: ";
+            cin >> rainfall[month];
+        }
+
+        totalRainfall += rainfall[month];
+
+        if (rainfall[month] > highestRainfall) {
+            highestRainfall = rainfall[month];
+            highestMonth = month;
+        }
+
+        if (rainfall[month] < lowestRainfall) {
+            lowestRainfall = rainfall[month];
+            lowestMonth = month;
+        }
+    }
+
+    // Tinh luong mua hang thang trung binh
+    double averageRainfall = totalRainfall / NUM_MONTHS;
+
+    // Hien thi ket qua
+    cout << fixed << setprecision(2);
+    cout << "\nTong luong mua trong nam: " << totalRainfall << " inches\n";
+    cout << "Luong mua hang thang trung binh: " << averageRainfall << " inches\n";
+    cout << "Thang co luong mua cao nhat: Thang " << (highestMonth + 1) << " (" << highestRainfall << " inches)\n";
+    cout << "Thang co luong mua thap nhat: Thang " << (lowestMonth + 1) << " (" << lowestRainfall << " inches)\n";
+
+    return 0;
+}

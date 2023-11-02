@@ -1,0 +1,60 @@
+// chương trình nhập vào số thức ăn khỉ
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+const int SO_KHI = 3;
+const int SO_NGAY = 5;
+
+int main()
+{
+    double thucAn[SO_KHI][SO_NGAY];
+
+    // Nhập lượng thức ăn cho từng con khỉ và ngày trong tuần
+    for (int khi = 0; khi < SO_KHI; khi++)
+    {
+        for (int ngay = 0; ngay < SO_NGAY; ngay++)
+        {
+            do
+            {
+                cout << "Nhap luong thuc an cho Khi " << khi + 1 << " ngay " << ngay + 1 << ": ";
+                cin >> thucAn[khi][ngay];
+                if (thucAn[khi][ngay] < 0)
+                {
+                    cout << "Du lieu khong hop le. Vui long nhap gia tri khong am." << endl;
+                }
+            } while (thucAn[khi][ngay] < 0);
+        }
+    }
+
+    // Tinh toan va hien thi thong tin
+    double tongThucAn = 0;
+    double itNhat = thucAn[0][0];
+    double nhieuNhat = thucAn[0][0];
+
+    for (int khi = 0; khi < SO_KHI; khi++)
+    {
+        for (int ngay = 0; ngay < SO_NGAY; ngay++)
+        {
+            tongThucAn += thucAn[khi][ngay];
+            if (thucAn[khi][ngay] < itNhat)
+            {
+                itNhat = thucAn[khi][ngay];
+            }
+            if (thucAn[khi][ngay] > nhieuNhat)
+            {
+                nhieuNhat = thucAn[khi][ngay];
+            }
+        }
+    }
+
+    double trungBinhNgay = tongThucAn / (SO_KHI * SO_NGAY);
+
+    cout << fixed << setprecision(2);
+    cout << "Luong thuc an trung binh moi ngay cua ca gia dinh khi: " << trungBinhNgay << " pounds" << endl;
+    cout << "Luong thuc an it nhat ma mot con khi an trong tuan: " << itNhat << " pounds" << endl;
+    cout << "Luong thuc an nhieu nhat ma mot con khi an trong tuan: " << nhieuNhat << " pounds" << endl;
+
+    return 0;
+}

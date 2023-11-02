@@ -1,0 +1,18 @@
+// Tchương trình này dùng mảng kểu chuổi
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    const int  SIZE = 9;
+    // khai báo mảng là các tên
+    string planets[SIZE] = {"Mercury", "Venus", "Earth", "Mars",
+                            "Jupiter", "Saturn", "Uranus",
+                            "Neptune", "Pluto (a dwarf planet)"};
+    cout <<"Here are the planets : \n";
+    for (int count = 0; count < SIZE; count++)
+    {
+       cout <<planets[count] <<endl;
+    }
+    return 0;
+}

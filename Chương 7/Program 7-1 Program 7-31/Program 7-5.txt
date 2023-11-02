@@ -1,0 +1,24 @@
+//this program unsafely accesses an area of memory by writing 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const int SIZE = 3;
+    int value[SIZE];//kích cở mảng = 3
+    int count;
+    //cố gắng lưu 5 số trong mảng 3 phần tử 
+    cout <<"I will store 5 numbers in a 3-element array.";
+    for(count = 0 ;count < 5  ;count++)
+    {
+        value[size] = 100;
+    }
+    //nếu chương trình chạy thì sẻ hiển thị sô
+    cout <<"If you see this message it mean the program\n";
+    cout <<"has not crashed! Here are the number.\n";
+    for(count = = 0 ; count < 5 ; count++)
+    {
+        cout << value[count] <<endl;
+    }
+    return 0;
+}

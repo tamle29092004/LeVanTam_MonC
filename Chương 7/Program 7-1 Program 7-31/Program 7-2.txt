@@ -1,0 +1,25 @@
+// chương trình nhập vào số giờ làm việc với 6 lần nhập
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    const int NUM_EMPLOYMENS = 6; // số employes
+    int hours[NUM_EMPLOYMENS];
+    int count;
+    // nhập số giờ làm việc
+    for (count = 0; count < NUM_EMPLOYMENS; count++)
+    {
+        cout << "Enter the hours worked by employee " << (count + 1) << " : ";
+        cin >> hours[count];
+    }
+    // xuất ra giá trị của mảng
+    cout << "The hours you entered are : ";
+    for (count = 0; count < NUM_EMPLOYMENS; count++)
+    {
+        cout << " " << hours[count];
+        
+    }
+    cout <<endl; 
+    return 0;
+}

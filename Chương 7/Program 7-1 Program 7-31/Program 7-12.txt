@@ -1,0 +1,23 @@
+// chương trình thử nhập mảng bằng kểu khác
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    const int SIZE = 5;
+    int number[SIZE];
+
+    // nhập giá trị cho mảng
+    for (int &val : number)
+    {
+        cout << "Enter an integer value : ";
+        cin >> val;
+    }
+    // hiển thị giá trị
+    cout << "Here are the value you entered : \n ";
+    for (int val : number)
+    {
+        cout << val << endl;
+    }
+    return 0;
+}

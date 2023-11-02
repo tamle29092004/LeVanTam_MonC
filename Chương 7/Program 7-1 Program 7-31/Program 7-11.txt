@@ -1,0 +1,18 @@
+// this program demonstrates the range-based for loop
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+    //khai báo 1 mảng kểu chuổi
+    string planets[] = {"Mercury", "Venus", "Earth", "Mars",
+                        "Jupiter", "Saturn", "Uranus",
+                        "Neptune", "Pluto (a dwarf planet)"};
+    cout <<" Here are the planet : \n";
+    for( string val : planets)
+    {
+        cout << val << endl;
+    }
+    return 0;
+}

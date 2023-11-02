@@ -1,0 +1,33 @@
+//chương trình hiển thị các số trong mảng lớn hơn n
+#include <iostream>
+
+using namespace std;
+
+// Hàm hiển thị tất cả các số trong mảng lớn hơn số n
+void displayNumbersGreaterThanN(int arr[], int size, int n) {
+    cout << "Cac so lon hon " << n << " trong mang la: ";
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > n) {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    const int SIZE = 10;
+    int arr[SIZE] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
+    int n;
+
+    cout << "Nhap so n: ";
+    cin >> n;
+    if ( n > 50 )
+    {
+        cout <<"So ban vua nhap lon hon tat cac so trong mang !!!";
+        return 1;
+    }
+
+    displayNumbersGreaterThanN(arr, SIZE, n);
+
+    return 0;
+}

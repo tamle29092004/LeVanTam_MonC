@@ -1,0 +1,15 @@
+//this program demonstrates the ranges-based for loop
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    //khai báo 1 mảng integer
+    int number [] = { 10 , 20 ,30 ,40 , 50};
+    //xuất ra màn hình 
+    for(int val : number)
+    {
+        cout << val <<endl;
+    }
+    return 0;
+}
