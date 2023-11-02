@@ -1,1 +1,1 @@
-Đây là một cái responsibilty nhỏ của mình hihi
+Đây là một cái Repositories nhỏ của mình hihi
